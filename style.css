@@ -205,10 +205,16 @@ img { max-width: 100%; height: auto; }
 
 /* --- Registre compteurs --- */
 .registre-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 16px;
   margin-bottom: 16px;
+}
+
+.registre-card {
+  flex: 0 1 calc(33.333% - 12px);
+  min-width: 150px;
 }
 
 .registre-card {
@@ -217,6 +223,11 @@ img { max-width: 100%; height: auto; }
   border-radius: 8px;
   padding: 24px 16px;
   text-align: center;
+}
+
+a.event-card:hover {
+  border-color: var(--bleu-moyen);
+  box-shadow: 0 2px 8px rgba(44,74,124,0.1);
 }
 
 .registre-card .nombre {
@@ -502,8 +513,11 @@ img { max-width: 100%; height: auto; }
   .hero { padding: 40px 20px; }
 
   .registre-grid {
-    grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .registre-card {
+    flex: 0 1 100%;
   }
 
   .registre-card { padding: 16px; }
