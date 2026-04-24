@@ -1,0 +1,520 @@
+/* ============================================
+   COMMUNAUTÉ BAPTISTE DE BELGIQUE — style.css
+   Site : baptistesdebelgique.be
+   Hébergé sur GitHub Pages
+   ============================================ */
+
+/* --- Reset & Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Lora', 'Georgia', serif;
+  color: #2c2c2a;
+  background: #f7f5f0;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; height: auto; }
+
+/* --- Couleurs --- */
+:root {
+  --bleu-fonce: #1B2A4A;
+  --bleu-moyen: #2C4A7C;
+  --bleu-clair: #E8EEF6;
+  --or: #B89A3D;
+  --or-clair: #F5EDD4;
+  --texte: #2c2c2a;
+  --texte-clair: #5a5a58;
+  --fond: #f7f5f0;
+  --blanc: #ffffff;
+}
+
+/* --- Header / Navigation --- */
+.site-header {
+  background: var(--bleu-fonce);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--or);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--bleu-fonce);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.logo-text small {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0;
+  font-family: 'Lora', serif;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  gap: 0;
+}
+
+.main-nav a {
+  color: rgba(255,255,255,0.75);
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  padding: 20px 16px;
+  transition: color 0.2s, border-color 0.2s;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #ffffff;
+  border-bottom-color: var(--or);
+}
+
+/* Hamburger mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu-moyen) 100%);
+  padding: 60px 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.hero .btn {
+  display: inline-block;
+  background: var(--or);
+  color: var(--bleu-fonce);
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.hero .btn:hover {
+  background: #caa94a;
+}
+
+/* --- Sections --- */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--texte-clair);
+  margin-bottom: 28px;
+}
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: #e0ddd5;
+  margin: 0;
+}
+
+/* --- Registre compteurs --- */
+.registre-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.registre-card {
+  background: var(--blanc);
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.registre-card .nombre {
+  font-family: 'Cinzel', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--bleu-fonce);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.registre-card .label {
+  font-size: 13px;
+  color: var(--texte-clair);
+  letter-spacing: 0.3px;
+}
+
+.registre-note {
+  font-size: 13px;
+  color: var(--texte-clair);
+  text-align: center;
+  font-style: italic;
+}
+
+/* --- Vie protestante --- */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-card {
+  background: var(--blanc);
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.event-info h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 4px;
+}
+
+.event-info .event-meta {
+  font-size: 13px;
+  color: var(--texte-clair);
+}
+
+.event-badge {
+  font-size: 11px;
+  background: var(--bleu-clair);
+  color: var(--bleu-moyen);
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* --- Confession de foi --- */
+.foi-article {
+  background: var(--blanc);
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 16px;
+}
+
+.foi-article h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 17px;
+  color: var(--bleu-fonce);
+  margin-bottom: 12px;
+}
+
+.foi-article p {
+  font-size: 15px;
+  color: var(--texte);
+  margin-bottom: 10px;
+}
+
+.foi-article .verset {
+  font-style: italic;
+  color: var(--texte-clair);
+  font-size: 13px;
+  border-left: 3px solid var(--or);
+  padding-left: 12px;
+  margin-top: 10px;
+}
+
+/* --- Annuaire églises --- */
+.eglise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eglise-item {
+  background: var(--blanc);
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eglise-item .nom {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--texte);
+}
+
+.eglise-item .ville {
+  font-size: 13px;
+  color: var(--texte-clair);
+}
+
+.eglise-item .lien {
+  font-size: 12px;
+  color: var(--bleu-moyen);
+  border: 1px solid var(--bleu-moyen);
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.eglise-item .lien:hover {
+  background: var(--bleu-moyen);
+  color: #fff;
+}
+
+/* --- Formulaire contact --- */
+.contact-form {
+  background: var(--blanc);
+  border: 1px solid #e0ddd5;
+  border-radius: 8px;
+  padding: 28px 32px;
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--texte);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d0cdc5;
+  border-radius: 4px;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  color: var(--texte);
+  background: var(--fond);
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--bleu-moyen);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  background: var(--bleu-fonce);
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+
+.form-submit:hover {
+  background: var(--bleu-moyen);
+}
+
+/* --- Lien vers reverend.be --- */
+.lien-pasteur {
+  background: var(--or-clair);
+  border: 1px solid #e0d8b8;
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lien-pasteur .icone {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--or);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.lien-pasteur .texte h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 15px;
+  color: var(--texte);
+  margin-bottom: 4px;
+}
+
+.lien-pasteur .texte p {
+  font-size: 13px;
+  color: var(--texte-clair);
+}
+
+.lien-pasteur .texte a {
+  color: var(--bleu-moyen);
+  font-weight: 600;
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--bleu-fonce);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 24px;
+  font-size: 13px;
+}
+
+.site-footer a {
+  color: var(--or);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bleu-fonce);
+    flex-direction: column;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .main-nav.open { display: flex; }
+
+  .main-nav a {
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .hero h1 { font-size: 22px; }
+  .hero { padding: 40px 20px; }
+
+  .registre-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .registre-card { padding: 16px; }
+  .registre-card .nombre { font-size: 28px; }
+
+  .event-card { flex-direction: column; gap: 8px; }
+
+  .header-inner { padding: 0 16px; }
+  .section { padding: 32px 16px; }
+  .foi-article { padding: 20px; }
+  .contact-form { padding: 20px; }
+
+  .eglise-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

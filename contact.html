@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nous rejoindre — Communauté Baptiste de Belgique</title>
+  <meta name="description" content="Contactez la Communauté Baptiste de Belgique. Vous souhaitez en savoir plus sur la foi baptiste, être accompagné spirituellement ou rejoindre notre communauté ?">
+  <link rel="canonical" href="https://www.baptistesdebelgique.be/contact.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-circle">CBB</div>
+        <div class="logo-text">
+          Communauté Baptiste<br>de Belgique
+          <small>Fondée par le Pasteur Constant</small>
+        </div>
+      </a>
+      <button class="hamburger" onclick="document.querySelector('.main-nav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="foi.html">Notre foi</a>
+        <a href="vie-protestante.html">Vie protestante</a>
+        <a href="contact.html" class="active">Nous rejoindre</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Nous rejoindre</h1>
+    <p>Vous souhaitez en savoir plus sur la foi baptiste, être accompagné spirituellement ou simplement poser une question ? Écrivez-nous.</p>
+  </section>
+
+  <!-- ===== FORMULAIRE ===== -->
+  <section class="section">
+    <h2 class="section-title">Prenez contact avec nous</h2>
+    <p class="section-subtitle">Le Pasteur Constant vous répondra personnellement</p>
+
+    <!-- IMPORTANT : Ce formulaire utilise Formspree (gratuit, 50 envois/mois).
+         Remplacez l'URL action par votre propre endpoint Formspree :
+         1. Allez sur https://formspree.io/
+         2. Créez un compte gratuit avec info@reverend.be
+         3. Créez un formulaire et copiez l'URL
+         4. Remplacez l'action ci-dessous -->
+    <form class="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+
+      <div class="form-group">
+        <label for="nom">Votre nom</label>
+        <input type="text" id="nom" name="nom" required placeholder="Prénom et nom">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Votre adresse email</label>
+        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone (facultatif)</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="+32 ...">
+      </div>
+
+      <div class="form-group">
+        <label for="motif">Motif de votre message</label>
+        <select id="motif" name="motif" required>
+          <option value="" disabled selected>Choisissez...</option>
+          <option value="information">Je souhaite en savoir plus sur la CBB</option>
+          <option value="accompagnement">Je cherche un accompagnement spirituel</option>
+          <option value="bapteme">Je m'intéresse au baptême</option>
+          <option value="mariage">Je souhaite un mariage religieux protestant</option>
+          <option value="funerailles">Je cherche un pasteur pour des funérailles</option>
+          <option value="eglise">Je cherche une église protestante en Belgique</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" required placeholder="Décrivez votre demande..."></textarea>
+      </div>
+
+      <input type="hidden" name="_subject" value="Nouveau message depuis baptistesdebelgique.be">
+      <input type="hidden" name="_next" value="https://www.baptistesdebelgique.be/merci.html">
+
+      <button type="submit" class="form-submit">Envoyer le message</button>
+    </form>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- ===== COORDONNÉES ===== -->
+  <section class="section">
+    <h2 class="section-title">Nos coordonnées</h2>
+    <p class="section-subtitle">Presbytère de la Communauté Baptiste de Belgique</p>
+
+    <div class="foi-article">
+      <p><strong>Adresse :</strong> Av. Octave Michot 1, 1640 Rhode-Saint-Genèse, Belgique</p>
+      <p><strong>Email :</strong> info@reverend.be</p>
+      <p><strong>Site du Pasteur :</strong> <a href="https://www.reverend.be" target="_blank" rel="noopener" style="color: #2C4A7C;">www.reverend.be</a></p>
+      <p style="margin-top: 16px; font-size: 13px; color: #5a5a58; font-style: italic;">Le Pasteur Constant est un pasteur itinérant — il se déplace dans toute la Belgique pour les cérémonies. Les rencontres au presbytère se font sur rendez-vous.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    Communauté Baptiste de Belgique (CBB) — Fondée par le <a href="https://www.reverend.be" target="_blank" rel="noopener">Pasteur Constant</a><br>
+    Av. Octave Michot 1, 1640 Rhode-Saint-Genèse &middot; info@reverend.be<br>
+    <small>En communion fraternelle avec l'<a href="https://associationbaptiste.org" target="_blank" rel="noopener">Association évangélique d'Églises baptistes de langue française</a></small>
+  </footer>
+
+</body>
+</html>
