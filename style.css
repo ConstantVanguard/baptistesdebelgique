@@ -510,6 +510,48 @@ a.event-card:hover {
   text-decoration: underline;
 }
 
+/* --- Encadré CTA « Nous rejoindre » --- */
+.cta-box {
+  border: 2px solid var(--bleu);
+  border-radius: var(--rayon);
+  background: var(--blanc);
+  padding: 28px 32px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta-box h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bleu);
+  margin-bottom: 8px;
+}
+
+.cta-box p {
+  font-size: 14px;
+  color: var(--bleu);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.cta-box .btn {
+  display: inline-block;
+  background: var(--bleu);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--rayon);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.cta-box .btn:hover {
+  background: var(--bleu-fonce);
+  box-shadow: var(--ombre-hover);
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--bleu-fonce);
