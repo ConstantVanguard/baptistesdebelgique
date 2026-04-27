@@ -2,84 +2,89 @@
    COMMUNAUTÉ BAPTISTE DE BELGIQUE — style.css
    Site : baptistesdebelgique.be
    Hébergé sur GitHub Pages
+   Design inspiré de leuenberg.eu — institutionnel, épuré
    ============================================ */
 
 /* --- Reset & Base --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Lora', 'Georgia', serif;
-  color: #2c2c2a;
-  background: #f7f5f0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
   line-height: 1.7;
   overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
-
 img { max-width: 100%; height: auto; }
 
-/* --- Couleurs --- */
+/* --- Variables --- */
 :root {
-  --bleu-fonce: #1B2A4A;
-  --bleu-moyen: #2C4A7C;
-  --bleu-clair: #E8EEF6;
-  --or: #B89A3D;
-  --or-clair: #F5EDD4;
-  --texte: #2c2c2a;
-  --texte-clair: #5a5a58;
-  --fond: #f7f5f0;
+  --bleu: #2B4C7E;
+  --bleu-fonce: #1B3461;
+  --bleu-clair: #EDF2F8;
+  --or: #C5973A;
+  --or-clair: #F8F1E4;
+  --texte: #1a1a1a;
+  --texte-secondaire: #555555;
+  --texte-clair: #777777;
+  --bordure: #E0E0E0;
+  --fond-section: #F7F8FA;
   --blanc: #ffffff;
+  --rayon: 6px;
+  --ombre: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --ombre-hover: 0 4px 12px rgba(0,0,0,0.08);
+  --transition: 0.2s ease;
 }
 
 /* --- Header / Navigation --- */
 .site-header {
-  background: var(--bleu-fonce);
-  padding: 0;
+  background: var(--blanc);
+  border-bottom: 1px solid var(--bordure);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .header-inner {
-  max-width: 1000px;
+  max-width: 1060px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 0;
+  gap: 14px;
+  padding: 16px 0;
 }
 
 .logo-circle {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: var(--or);
+  background: var(--bleu);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Cinzel', serif;
   font-weight: 700;
   font-size: 13px;
-  color: var(--bleu-fonce);
+  color: #ffffff;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
 
 .logo-text {
-  color: #ffffff;
+  color: var(--bleu-fonce);
   font-family: 'Cinzel', serif;
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   line-height: 1.3;
 }
 
@@ -87,9 +92,10 @@ img { max-width: 100%; height: auto; }
   display: block;
   font-size: 11px;
   font-weight: 400;
-  color: rgba(255,255,255,0.6);
+  color: var(--texte-clair);
   letter-spacing: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Inter', sans-serif;
+  margin-top: 2px;
 }
 
 /* Navigation */
@@ -99,19 +105,23 @@ img { max-width: 100%; height: auto; }
 }
 
 .main-nav a {
-  color: rgba(255,255,255,0.75);
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  letter-spacing: 0.5px;
-  padding: 20px 16px;
-  transition: color 0.2s, border-color 0.2s;
+  color: var(--texte-secondaire);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 22px 18px;
+  transition: color var(--transition), border-color var(--transition);
   border-bottom: 2px solid transparent;
+  letter-spacing: 0.01em;
 }
 
-.main-nav a:hover,
+.main-nav a:hover {
+  color: var(--bleu);
+}
+
 .main-nav a.active {
-  color: #ffffff;
-  border-bottom-color: var(--or);
+  color: var(--bleu);
+  border-bottom-color: var(--bleu);
+  font-weight: 600;
 }
 
 /* Hamburger mobile */
@@ -119,7 +129,7 @@ img { max-width: 100%; height: auto; }
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 26px;
+  width: 24px;
   height: 18px;
   background: none;
   border: none;
@@ -130,56 +140,59 @@ img { max-width: 100%; height: auto; }
 .hamburger span {
   width: 100%;
   height: 2px;
-  background: #ffffff;
+  background: var(--texte);
   border-radius: 2px;
   transition: 0.3s;
 }
 
 /* --- Hero --- */
 .hero {
-  background: linear-gradient(135deg, var(--bleu-fonce) 0%, var(--bleu-moyen) 100%);
-  padding: 60px 24px;
+  background: var(--fond-section);
+  border-bottom: 1px solid var(--bordure);
+  padding: 56px 28px;
   text-align: center;
-  color: #ffffff;
 }
 
 .hero h1 {
   font-family: 'Cinzel', serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  color: var(--bleu-fonce);
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
 }
 
 .hero p {
   font-size: 16px;
-  color: rgba(255,255,255,0.8);
-  max-width: 600px;
+  color: var(--texte-secondaire);
+  max-width: 620px;
   margin: 0 auto 24px;
+  line-height: 1.7;
 }
 
 .hero .btn {
   display: inline-block;
-  background: var(--or);
-  color: var(--bleu-fonce);
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
+  background: var(--bleu);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
   padding: 12px 28px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-  transition: background 0.2s;
+  border-radius: var(--rayon);
+  letter-spacing: 0.02em;
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .hero .btn:hover {
-  background: #caa94a;
+  background: var(--bleu-fonce);
+  box-shadow: var(--ombre-hover);
 }
 
 /* --- Sections --- */
 .section {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 52px 28px;
 }
 
 .section-title {
@@ -187,62 +200,59 @@ img { max-width: 100%; height: auto; }
   font-size: 22px;
   font-weight: 700;
   color: var(--bleu-fonce);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .section-subtitle {
   font-size: 14px;
   color: var(--texte-clair);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .section-divider {
   border: none;
   height: 1px;
-  background: #e0ddd5;
+  background: var(--bordure);
   margin: 0;
 }
 
 /* --- Registre compteurs --- */
 .registre-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-bottom: 16px;
-}
-
-.registre-card {
-  flex: 0 1 calc(33.333% - 12px);
-  min-width: 150px;
+  margin-bottom: 20px;
 }
 
 .registre-card {
   background: var(--blanc);
-  border: 1px solid #e0ddd5;
-  border-radius: 8px;
-  padding: 24px 16px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 28px 16px;
   text-align: center;
+  box-shadow: var(--ombre);
+  transition: box-shadow var(--transition), transform var(--transition);
 }
 
-a.event-card:hover {
-  border-color: var(--bleu-moyen);
-  box-shadow: 0 2px 8px rgba(44,74,124,0.1);
+.registre-card:hover {
+  box-shadow: var(--ombre-hover);
+  transform: translateY(-1px);
 }
 
 .registre-card .nombre {
   font-family: 'Cinzel', serif;
   font-size: 36px;
   font-weight: 700;
-  color: var(--bleu-fonce);
+  color: var(--bleu);
   line-height: 1;
   margin-bottom: 8px;
 }
 
 .registre-card .label {
   font-size: 13px;
-  color: var(--texte-clair);
-  letter-spacing: 0.3px;
+  color: var(--texte-secondaire);
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .registre-note {
@@ -252,28 +262,34 @@ a.event-card:hover {
   font-style: italic;
 }
 
-/* --- Vie protestante --- */
+/* --- Vie protestante / Événements --- */
 .event-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .event-card {
   background: var(--blanc);
-  border: 1px solid #e0ddd5;
-  border-radius: 8px;
-  padding: 16px 20px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 18px 22px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--ombre);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+a.event-card:hover {
+  border-color: var(--bleu);
+  box-shadow: var(--ombre-hover);
 }
 
 .event-info h3 {
-  font-family: 'Cinzel', serif;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--texte);
   margin-bottom: 4px;
 }
@@ -286,26 +302,28 @@ a.event-card:hover {
 .event-badge {
   font-size: 11px;
   background: var(--bleu-clair);
-  color: var(--bleu-moyen);
-  padding: 3px 10px;
-  border-radius: 12px;
+  color: var(--bleu);
+  padding: 4px 12px;
+  border-radius: 20px;
   white-space: nowrap;
   font-weight: 600;
   flex-shrink: 0;
+  letter-spacing: 0.02em;
 }
 
 /* --- Confession de foi --- */
 .foi-article {
   background: var(--blanc);
-  border: 1px solid #e0ddd5;
-  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
   padding: 28px 32px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--ombre);
 }
 
 .foi-article h3 {
-  font-family: 'Cinzel', serif;
   font-size: 17px;
+  font-weight: 700;
   color: var(--bleu-fonce);
   margin-bottom: 12px;
 }
@@ -314,6 +332,7 @@ a.event-card:hover {
   font-size: 15px;
   color: var(--texte);
   margin-bottom: 10px;
+  line-height: 1.7;
 }
 
 .foi-article .verset {
@@ -321,8 +340,9 @@ a.event-card:hover {
   color: var(--texte-clair);
   font-size: 13px;
   border-left: 3px solid var(--or);
-  padding-left: 12px;
-  margin-top: 10px;
+  padding-left: 14px;
+  margin-top: 12px;
+  line-height: 1.6;
 }
 
 /* --- Annuaire églises --- */
@@ -334,60 +354,68 @@ a.event-card:hover {
 
 .eglise-item {
   background: var(--blanc);
-  border: 1px solid #e0ddd5;
-  border-radius: 8px;
-  padding: 14px 20px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 16px 22px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: var(--ombre);
+  transition: box-shadow var(--transition);
+}
+
+.eglise-item:hover {
+  box-shadow: var(--ombre-hover);
 }
 
 .eglise-item .nom {
-  font-family: 'Cinzel', serif;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--texte);
 }
 
 .eglise-item .ville {
   font-size: 13px;
   color: var(--texte-clair);
+  margin-top: 2px;
 }
 
 .eglise-item .lien {
-  font-size: 12px;
-  color: var(--bleu-moyen);
-  border: 1px solid var(--bleu-moyen);
-  padding: 4px 12px;
-  border-radius: 4px;
-  transition: 0.2s;
+  font-size: 13px;
+  color: var(--bleu);
+  border: 1px solid var(--bleu);
+  padding: 5px 14px;
+  border-radius: var(--rayon);
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
 }
 
 .eglise-item .lien:hover {
-  background: var(--bleu-moyen);
+  background: var(--bleu);
   color: #fff;
 }
 
 /* --- Formulaire contact --- */
 .contact-form {
   background: var(--blanc);
-  border: 1px solid #e0ddd5;
-  border-radius: 8px;
-  padding: 28px 32px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 32px;
   max-width: 600px;
+  box-shadow: var(--ombre);
 }
 
 .form-group {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
-  font-family: 'Cinzel', serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--texte);
   margin-bottom: 6px;
+  letter-spacing: 0.01em;
 }
 
 .form-group input,
@@ -395,59 +423,61 @@ a.event-card:hover {
 .form-group textarea {
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid #d0cdc5;
+  border: 1px solid var(--bordure);
   border-radius: 4px;
-  font-family: 'Lora', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: var(--texte);
-  background: var(--fond);
-  transition: border-color 0.2s;
+  background: var(--blanc);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--bleu-moyen);
+  border-color: var(--bleu);
+  box-shadow: 0 0 0 3px rgba(43, 76, 126, 0.1);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 110px;
 }
 
 .form-submit {
-  background: var(--bleu-fonce);
+  background: var(--bleu);
   color: #ffffff;
-  font-family: 'Cinzel', serif;
-  font-size: 13px;
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   padding: 12px 28px;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--rayon);
   cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: background 0.2s;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), box-shadow var(--transition);
 }
 
 .form-submit:hover {
-  background: var(--bleu-moyen);
+  background: var(--bleu-fonce);
+  box-shadow: var(--ombre-hover);
 }
 
 /* --- Lien vers reverend.be --- */
 .lien-pasteur {
   background: var(--or-clair);
-  border: 1px solid #e0d8b8;
-  border-radius: 8px;
-  padding: 20px 24px;
+  border: 1px solid #E8DFC5;
+  border-radius: var(--rayon);
+  padding: 22px 26px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .lien-pasteur .icone {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: var(--or);
   display: flex;
@@ -455,36 +485,48 @@ a.event-card:hover {
   justify-content: center;
   font-size: 20px;
   flex-shrink: 0;
+  color: #ffffff;
 }
 
 .lien-pasteur .texte h3 {
-  font-family: 'Cinzel', serif;
   font-size: 15px;
+  font-weight: 700;
   color: var(--texte);
   margin-bottom: 4px;
 }
 
 .lien-pasteur .texte p {
-  font-size: 13px;
-  color: var(--texte-clair);
+  font-size: 14px;
+  color: var(--texte-secondaire);
+  line-height: 1.6;
 }
 
 .lien-pasteur .texte a {
-  color: var(--bleu-moyen);
+  color: var(--bleu);
   font-weight: 600;
+}
+
+.lien-pasteur .texte a:hover {
+  text-decoration: underline;
 }
 
 /* --- Footer --- */
 .site-footer {
   background: var(--bleu-fonce);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.65);
   text-align: center;
-  padding: 24px;
+  padding: 28px;
   font-size: 13px;
+  line-height: 1.8;
 }
 
 .site-footer a {
-  color: var(--or);
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 /* --- Responsive --- */
@@ -497,38 +539,51 @@ a.event-card:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--bleu-fonce);
+    background: var(--blanc);
     flex-direction: column;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--bordure);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
   .main-nav.open { display: flex; }
 
   .main-nav a {
     padding: 14px 24px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid var(--bordure);
+    border-left: 3px solid transparent;
   }
 
-  .hero h1 { font-size: 22px; }
+  .main-nav a.active {
+    border-bottom: 1px solid var(--bordure);
+    border-left-color: var(--bleu);
+    background: var(--bleu-clair);
+  }
+
+  .hero h1 { font-size: 24px; }
   .hero { padding: 40px 20px; }
 
   .registre-grid {
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
-  .registre-card {
-    flex: 0 1 100%;
-  }
+  .registre-card { padding: 20px 16px; }
+  .registre-card .nombre { font-size: 30px; }
 
-  .registre-card { padding: 16px; }
-  .registre-card .nombre { font-size: 28px; }
-
-  .event-card { flex-direction: column; gap: 8px; }
+  .event-card { flex-direction: column; align-items: flex-start; gap: 10px; }
 
   .header-inner { padding: 0 16px; }
-  .section { padding: 32px 16px; }
-  .foi-article { padding: 20px; }
-  .contact-form { padding: 20px; }
+  .section { padding: 36px 16px; }
+  .foi-article { padding: 22px 20px; }
+  .contact-form { padding: 22px 20px; }
 
-  .eglise-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .eglise-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+  .lien-pasteur { flex-direction: column; text-align: center; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .registre-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
